@@ -12,10 +12,15 @@
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
+
+        <!--VERSIONS-->
+        <jcraft.version>0.1.55</jcraft.version>
+        <cucumber.version>6.4.0</cucumber.version>
     </properties>
 
     <modules>
         <module>maven</module>
+        <module>test</module>
         <module>utility</module>
     </modules>
 
@@ -25,10 +30,23 @@
             <dependency>
                 <groupId>com.jcraft</groupId>
                 <artifactId>jsch</artifactId>
-                <version>0.1.55</version>
+                <version>${jcraft.version}</version>
             </dependency>
 
-            <!--TEST-->
+            <!--TEST CUCUMBER-->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+
+            <!--TEST JUNIT-->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
