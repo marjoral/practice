@@ -35,4 +35,22 @@ public class SaveThePrisoner {
 
         return currentPrisoner;
     }
+
+    public static int saveThePrisonerFaster(int numberOfPrisoners, int numberOfSweets, int startingPrisoner) {
+        if(numberOfSweets == 1){
+            return startingPrisoner;
+        }
+
+        int sweetsToCareAbout = numberOfSweets - 1;
+        if (numberOfSweets > numberOfPrisoners){
+            sweetsToCareAbout = (numberOfSweets - 1) % numberOfPrisoners;
+        }
+
+        int currentPrisoner = sweetsToCareAbout + startingPrisoner;
+        if(currentPrisoner > numberOfPrisoners){
+            currentPrisoner = currentPrisoner % numberOfPrisoners;
+        }
+
+        return currentPrisoner;
+    }
 }
